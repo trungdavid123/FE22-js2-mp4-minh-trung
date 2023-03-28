@@ -1,3 +1,5 @@
+
+
 class Calculator {
     previousValueTextElement: HTMLElement;
     currentValueTextElement: HTMLElement;
@@ -95,3 +97,14 @@ btnList.forEach((btn) => {
         calculator.appendNumber();
     })
 })
+
+
+const div = document.querySelector(".container_section") as HTMLDivElement;
+const img = document.createElement('img') as HTMLImageElement;
+div.append(img);
+img.classList.add('nav__logo', "mb-3", "ml-3")
+
+const imgURL = new URL('./logo.5f25a564.svg', import.meta.url);
+
+
+img.src = imgURL.toString();

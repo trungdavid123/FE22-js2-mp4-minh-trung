@@ -120,6 +120,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"app.ts":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
@@ -196,39 +199,48 @@ var currentValue = document.querySelector('.current-value');
 var operation;
 var lastTarget;
 btnList.forEach(function (btn) {
-  var _a;
-  (_a = btn === null || btn === void 0 ? void 0 : btn.parentNode) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function (e) {
-    var _a, _b, _c, _d;
+  var _btn$parentNode;
+  btn === null || btn === void 0 ? void 0 : (_btn$parentNode = btn.parentNode) === null || _btn$parentNode === void 0 ? void 0 : _btn$parentNode.addEventListener('click', function (e) {
     var isOperator = /[+,*,.,/\-]/g;
     btnList.forEach(function (item) {
-      var _a;
-      return (_a = item === null || item === void 0 ? void 0 : item.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("bg-slate-900", "text-white");
+      var _item$parentElement;
+      return item === null || item === void 0 ? void 0 : (_item$parentElement = item.parentElement) === null || _item$parentElement === void 0 ? void 0 : _item$parentElement.classList.remove("bg-slate-900", "text-white");
     });
     var calculator = new Calculator(previousValue, currentValue, btn.innerText);
     currentValue.innerText = currentValue.innerText.replace(/[+*./=\-]/g, "");
     if (btn.innerText.match(isOperator)) {
-      (_a = btn.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("bg-slate-900", "text-white");
+      var _btn$parentElement;
+      (_btn$parentElement = btn.parentElement) === null || _btn$parentElement === void 0 ? void 0 : _btn$parentElement.classList.add("bg-slate-900", "text-white");
       operation = btn.innerText;
     } else if (btn.innerText === "=") {
-      (_b = btn.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("bg-slate-900", "text-white");
+      var _btn$parentElement2;
+      (_btn$parentElement2 = btn.parentElement) === null || _btn$parentElement2 === void 0 ? void 0 : _btn$parentElement2.classList.add("bg-slate-900", "text-white");
       setTimeout(function () {
         btnList.forEach(function (item) {
-          var _a;
-          return (_a = item === null || item === void 0 ? void 0 : item.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("bg-slate-900", "text-white");
+          var _item$parentElement2;
+          return item === null || item === void 0 ? void 0 : (_item$parentElement2 = item.parentElement) === null || _item$parentElement2 === void 0 ? void 0 : _item$parentElement2.classList.remove("bg-slate-900", "text-white");
         });
         currentValue.innerText = "";
       }, 2000);
       calculator.compute(operation);
     } else if (btn.innerText === "DEL") {
-      (_c = btn.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("bg-slate-900", "text-white");
+      var _btn$parentElement3;
+      (_btn$parentElement3 = btn.parentElement) === null || _btn$parentElement3 === void 0 ? void 0 : _btn$parentElement3.classList.add("bg-slate-900", "text-white");
       calculator.delete();
     } else if (btn.innerText === "AC") {
-      (_d = btn.parentElement) === null || _d === void 0 ? void 0 : _d.classList.add("bg-slate-900", "text-white");
+      var _btn$parentElement4;
+      (_btn$parentElement4 = btn.parentElement) === null || _btn$parentElement4 === void 0 ? void 0 : _btn$parentElement4.classList.add("bg-slate-900", "text-white");
       calculator.remove();
     }
     calculator.appendNumber();
   });
 });
+var div = document.querySelector(".container_section");
+var img = document.createElement('img');
+div.append(img);
+img.classList.add('nav__logo', "mb-3", "ml-3");
+var imgURL = new URL('./logo.5f25a564.svg', import.meta.url);
+img.src = imgURL.toString();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -254,7 +266,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55626" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58813" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
