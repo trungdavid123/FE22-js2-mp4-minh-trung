@@ -104,7 +104,8 @@ const img = document.createElement('img') as HTMLImageElement;
 div.append(img);
 img.classList.add('nav__logo', "mb-3", "ml-3")
 
-const imgURL = new URL('./logo.5f25a564.svg', import.meta.url);
+const imgURL = new URL(require('./logo.svg'), import.meta.url);
 
 
 img.src = imgURL.toString();
+

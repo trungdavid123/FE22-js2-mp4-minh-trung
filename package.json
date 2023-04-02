@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "parcel ./src/index.html",
     "build": "parcel build src/index.html --out-dir docs --public-url ./ --no-minify",
-    "clean": "del-cli ./.parcel-cache ./docs ./dist"
+    "clean": "del-cli ./.parcel-cache ./.cache ./dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.15.11",
+    "del-cli": "^5.0.0",
     "parcel": "^2.8.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
